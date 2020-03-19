@@ -1,0 +1,62 @@
+<div class="container container-signin container-sign">
+    <div class="modal-login-body">
+      <h3 class="text-center">Create new Hostel</h3>
+      <hr/>
+      <%= form_with(model: hostel, local: true) do |f| %>
+        <div class="avatar-upload">
+          <div class="avatar-edit">
+            <%= f.file_field :image, id: "imageUpload", accept:"image/*" %>
+            <label for="imageUpload"></label>
+          </div>
+          <div class="avatar-preview">
+            <div id="imagePreview" style="background-image: url(<%= current_user.profile_pic %>);">
+            </div>
+          </div>
+        </div>
+        <div class="form-group mt-3">
+          <label for="name">Name</label>
+          <%= f.text_field :name, autofocus: true,required: true, placeholder: 'Enter Of Your Name Hostel', class: 'form-control login-form', required: true %>
+        </div>
+
+        <div class="form-group mt-3">
+          <label for="name">Owner Name</label>
+          <%= f.text_field :owner_name, autofocus: true,required: true,value: current_user&.name, placeholder: 'Enter Your Name', class: 'form-control login-form', required: true %>
+        </div>
+         <div class="form-group mt-3">
+          <label for="name">Town</label>
+          <%= f.text_field :town, autofocus: true,required: true, placeholder: 'Town Name', class: 'form-control login-form', required: true %>
+        </div>
+         <div class="form-group mt-3">
+          <label for="name">Street</label>
+          <%= f.text_field :street, autofocus: true,required: true, placeholder: 'Enter street', class: 'form-control login-form', required: true %>
+        </div>
+
+          <div class="form-group mt-3">
+          <label for="name">City</label>
+          <%= f.text_field :city, autofocus: true,required: true, placeholder: 'Enter city', class: 'form-control login-form', required: true %>
+        </div>
+
+            <div class="form-group mt-3">
+          
+          <%= f.hidden_field :user_id, autofocus: true,required: true, value: current_user.id, placeholder: 'Enter city', class: 'form-control login-form', required: true %>
+        </div>
+        
+        <div class="form-group mt-3">
+          <label for="name">Rent Per Room</label>
+          <%= f.number_field :price, autofocus: true,required: true, placeholder: 'Rs:', class: 'form-control login-form', required: true %>
+        </div>
+        <div class="form-group">
+         <label for="phone_number">Phone Number</label>
+          <%= f.number_field :phone, placeholder: 'Enter Your Phone Number', class: 'form-control login-form', required: true %>
+        </div>
+        <div class="form-group">
+          <label for="gender">Air Conditioned</label>
+          <%= f.select :air_conditioned, options_for_select([["Optional","optional"],["Yes","yes"],["No","no"]]),{},{class: "form-control login-form"} %>
+        </div>
+        <div class="actions mt-3">
+          <%= f.submit "Create", class: 'btn btn-primary btn-lg btn-block mb-3 btn-submit' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

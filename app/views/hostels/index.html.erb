@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Hostels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>City</th>
+      <th>Town</th>
+      <th>Street</th>
+      <th>Near by</th>
+      <th>Owner name</th>
+      <th>Image</th>
+      <th>User</th>
+      <th>Status</th>
+      <th>Price</th>
+      <th>Air conditioned</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hostels.each do |hostel| %>
+      <tr>
+        <td><%= hostel.name %></td>
+        <td><%= hostel.address %></td>
+        <td><%= hostel.phone %></td>
+        <td><%= hostel.city %></td>
+        <td><%= hostel.town %></td>
+        <td><%= hostel.street %></td>
+        <td><%= hostel.near_by %></td>
+        <td><%= hostel.owner_name %></td>
+        <td><%= hostel.image %></td>
+        <td><%= hostel.user_id %></td>
+        <td><%= hostel.status %></td>
+        <td><%= hostel.price %></td>
+        <td><%= hostel.air_conditioned %></td>
+        <td><%= link_to 'Show', hostel %></td>
+        <td><%= link_to 'Edit', edit_hostel_path(hostel) %></td>
+        <td><%= link_to 'Destroy', hostel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hostel', new_hostel_path %>

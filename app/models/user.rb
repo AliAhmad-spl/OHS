@@ -21,6 +21,8 @@ class User < ApplicationRecord
 
   after_create :assign_default_role
 
+  has_many :hostels
+
   def assign_default_role
     user = self
     user.add_role(:normal) if user.roles.blank?

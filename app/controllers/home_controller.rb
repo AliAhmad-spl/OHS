@@ -41,4 +41,8 @@ class HomeController < ApplicationController
     end
     head :no_content
   end
+
+  def home
+    
+  end
 end

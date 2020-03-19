@@ -10,16 +10,16 @@ development:
   database: boiler_development
   host: localhost
   port: 5432
-  username: rails_dev
-  password: password
+  username: root
+  password: root
 
 test:
   <<: *default
   database: boiler_test
   host: localhost
   port: 5432
-  username: rails_dev
-  password: password
+  username: root
+  password: root
 
 production:
   <<: *default

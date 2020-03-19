@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :hostels
   devise_scope :user do
     root to: 'users/sessions#new'
   end
@@ -20,4 +21,5 @@ Rails.application.routes.draw do
                             omniauth_callbacks: 'users/omniauth_callbacks' }
   resources :users, only: %i[edit update]
   post 'stripe-webhooks', to: 'home#webhooks'
+  get '/home', to: 'home#home', as: :landing_page
 end

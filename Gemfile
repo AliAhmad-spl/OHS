@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 
 # Ruby Version
-ruby '2.6.3'
+ruby '2.6.5'
 
 # Major Gems
 gem 'coffee-rails', '~> 4.2'
