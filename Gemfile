@@ -37,6 +37,7 @@ group :development, :test do
 end
 
 # Used Gems for Ease
+gem 'loading_screen', '~> 0.2.3'
 gem 'awesome_print', require: 'ap' # for rails console
 gem 'breadcrumbs_on_rails'
 gem 'cancancan', '~> 2.0'

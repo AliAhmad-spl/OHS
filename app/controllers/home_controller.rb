@@ -43,6 +43,6 @@ class HomeController < ApplicationController
   end
 
   def home
-    
+   @hostels = Hostel.published
   end
 end

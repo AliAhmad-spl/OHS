@@ -10,6 +10,7 @@ class CreateHostels < ActiveRecord::Migration[5.2]
       t.string :near_by
       t.string :owner_name
       t.string :image
+      t.text   :description 
       t.string :user_id
       t.integer :status, default: 0
       t.integer :price, default: 0

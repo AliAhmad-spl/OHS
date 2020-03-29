@@ -12,6 +12,11 @@
          <li class="nav-item">
           <a class="nav-link" href="/home">Home</a>
         </li>
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <a class="nav-link" href="<%= new_hostel_path %>">Create hostel</a>
+          </li>
+        <% end %>
         <% unless user_signed_in? %>
           <li class="nav-item">
             <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal"><i class="fas fa-sign-in-alt mr-1"></i> SIGN IN</a>

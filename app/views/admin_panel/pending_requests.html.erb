@@ -1,0 +1,41 @@
+<div class="banner-header bg-white p-3">
+  <div class="row align-items-center">
+    <div class="col-md-6 text-center text-md-left mb-2 mb-md-0">
+      <h5 class="">Pending Requests</h5>
+     <%= render_breadcrumbs %>
+    </div>
+<!--     <div class="col-md-6 text-center text-md-right">
+      <a href="/users/invitation/new" class="btn btn-primary">Invite Users</a>
+    </div> -->
+  </div>
+</div>
+<div class="container container-admin px-md-4 px-2 container-s">
+  <div class="card p-4 rounded-0">
+    <div class="table-responsive table-users">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Owner name</th>
+            <th>Phone Number</th>
+            <th>Hostel Created On</th>
+            <th>Approve</th>
+            <th>Reject</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @hostels.each do |hostel| %>
+            <tr>
+              <td><%= hostel.name.present? ? hostel.name : 'Not Provided' %></td>
+              <td><%= hostel.user.name %></td>
+              <td><%= hostel.phone.present? ? hostel.phone : 'Not Provided' %></td>
+              <td><%= hostel.created_at.strftime('%d/%B/%Y at %I:%M %p') %></td>
+              <td><center><%= link_to 'Publish', change_status_path(published: hostel.id) %></center></td>
+              <td><center><%= link_to 'Reject', change_status_path(rejected: hostel.id) %></center></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

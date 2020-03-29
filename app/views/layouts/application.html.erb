@@ -39,6 +39,7 @@
       <%= render 'layouts/swal' %>
       <div class="<%= user_signed_in? ? 'container-main-sign':'container-main' %>" >
         <%= yield %>
+        <%#= loading_screen style: :double_bounce %>
       </div>
       <%= render 'layouts/footer' %>
     <% end %>

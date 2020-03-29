@@ -11,6 +11,7 @@
       <div class="col-12 sidebar-admin pr-0">
         <a class="dashboard-side-link <%= active?('admin_panel', 'index') %>" href="<%= admin_panel_path %>"><i class="fas fa-tachometer-alt" title="Admin Panel"></i><span>Admin Panel</span></a>
         <a class="menu dashboard-side-link <%= active?('admin_panel', 'users') %>" href="<%= admin_users_path %>"><i class="fas fa-users" title="Users"></i><span>Users</span></a>
+        <a class="menu dashboard-side-link <%= active?('admin_panel', 'users') %>" href="<%= pending_requests_path %>"><i class="fas fa-users" title="Users"></i><span>Pending Requests</span></a>
         <div class="submenu-link after">
           <div class="menu"><i class="fas fa-users" title="Main Menu"></i><span>Main Menu</span></div>
           <div class="sub-menu">

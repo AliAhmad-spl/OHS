@@ -1,6 +1,7 @@
 <div class="container-fluid">
 	<div class="row">
-		<aside class="col-sm-4">
+		<div class="col-sm-4 position-fixed" >
+		<aside >
 			<center><p><b>Filters</b></p></center>
 			<div class="card">
 				<article class="card-group-item">
@@ -90,15 +91,18 @@
 				</article> <!-- card-group-item.// -->
 			</div> <!-- card.// -->
 		</aside>
-
-
-		<div class="card col-sm-8" style="margin: 50px auto 0;">
+		</div>
+	<% @hostels.each do |hostel| %>
+		<div class="card col-sm-8 col-sm-offset-4" style="margin: 50px auto 0;">
 		  <img class="card-img-top" src="/landing.jpg" alt="Card image cap">
 		  <div class="card-body">
-		    <h5 class="card-title">Card title</h5>
-		    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-		    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+		    <h5 class="card-title"><%= hostel.name %></h5>
+		    <p class="card-text"><%= hostel.address%></p>
+		    <p class="card-text"><small class="text-muted">Last updated 
+		    	<%= time_ago_in_words(hostel.updated_at)%> ago</small></p>
+		    <p class="card-text"><small class="text-muted">Contact: <%= hostel.phone%></small></p>
 		  </div>
 		</div>
+	<%end%>
 	</div>
 </div>

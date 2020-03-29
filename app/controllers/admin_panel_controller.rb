@@ -19,6 +19,23 @@ class AdminPanelController < ApplicationController
                    title: 'Back to the All Users'
   end
 
+  def pending_requests
+    @hostels = Hostel.pending.includes(:user)
+  end
+
+  def change_status
+    if params[:published].present?
+      @status = 'Published'
+      @hostel = Hostel.find(params[:published])
+      @hostel.update(status: 'published')
+    else
+      @status = 'Rejected'
+      @hostel = Hostel.find(params[:rejected])
+      @hostel.update(status: 'rejected')      
+    end
+    redirect_to pending_requests_path, notice: "Hostel #{@hostel.name} has been #{@status}"
+  end
+
   def change_access
     @user = User.find(params[:enable] || params[:disable])
     if params[:enable].present?
