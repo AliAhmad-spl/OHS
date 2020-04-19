@@ -29,6 +29,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'
+  gem 'rails-erd'
 end
 
 # Gems Used for Development and Testing
@@ -37,7 +38,9 @@ group :development, :test do
 end
 
 # Used Gems for Ease
-gem 'loading_screen', '~> 0.2.3'
+#gem 'loading_screen', '~> 0.2.3'
+gem 'acts-as-taggable-on', '~> 6.0'
+gem 'simple_form'
 gem 'awesome_print', require: 'ap' # for rails console
 gem 'breadcrumbs_on_rails'
 gem 'cancancan', '~> 2.0'

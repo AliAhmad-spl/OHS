@@ -43,6 +43,13 @@ class HomeController < ApplicationController
   end
 
   def home
-   @hostels = Hostel.published
+    if params["search"]
+      @locations = params["search"]["locations"].flatten.reject(&:blank?)
+      @prices = params["search"]["prices"].flatten.reject(&:blank?)
+      @hostels = Hostel.published.where(town: @locations) if @locations.present?
+      @hostels = Hostel.published.where(price: @prices) if @prices.present?
+    else
+      @hostels = Hostel.published
+    end
   end
 end
