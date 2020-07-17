@@ -9,7 +9,7 @@
               <%= hostel.status %></span></h5>
             <p class="card-text"><%= hostel&.description %></p>
             <p class="card-text"><small class="text-muted"><%= time_ago_in_words(hostel.created_at)%> ago </small></p>
-            <a href="<%= hostels_path(hostel) %>" data-confirm="Are you sure?" data-method="delete" style="color:black">
+            <a href="hostel/<%=hostel.id %>" data-confirm="Are you sure?" data-method="delete" style="color:black">
               <i class="fas fa-trash" style="font-size:24px; float: right;"></i>
             </a>
             <a href="<%= edit_hostel_path(hostel) %>">

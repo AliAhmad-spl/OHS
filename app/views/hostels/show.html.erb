@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
-
+<center>
+  <div class="container card">
 <p>
   <strong>Name:</strong>
   <%= @hostel.name %>
@@ -64,6 +65,7 @@
   <strong>Air conditioned:</strong>
   <%= @hostel.air_conditioned %>
 </p>
+</div>
+</center>
 
-<%= link_to 'Edit', edit_hostel_path(@hostel) %> |
-<%= link_to 'Back', hostels_path %>
+<%= link_to 'Back', landing_page_path, class: 'btn btn-primary' %>

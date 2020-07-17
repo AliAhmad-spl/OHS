@@ -27,8 +27,8 @@
           <% @hostels.each do |hostel| %>
             <tr>
               <td><%= hostel.name.present? ? hostel.name : 'Not Provided' %></td>
-              <td><%= hostel.user.name %></td>
-              <td><%= hostel.phone.present? ? hostel.phone : 'Not Provided' %></td>
+              <td><%= hostel.user&.name %></td>
+              <td><%= hostel.phone&.present? ? hostel.phone : 'Not Provided' %></td>
               <td><%= hostel.created_at.strftime('%d/%B/%Y at %I:%M %p') %></td>
               <td><center><%= link_to 'Publish', change_status_path(published: hostel.id) %></center></td>
               <td><center><%= link_to 'Reject', change_status_path(rejected: hostel.id) %></center></td>

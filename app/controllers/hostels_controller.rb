@@ -24,7 +24,7 @@ class HostelsController < ApplicationController
     @hostel = Hostel.new(hostel_params)
 
     if @hostel.save
-      redirect_to @hostel, notice: 'Hostel was successfully created.'
+      redirect_to user_panel_path, notice: 'Hostel was successfully created.'
     else
       render :new
     end
@@ -33,16 +33,18 @@ class HostelsController < ApplicationController
   # PATCH/PUT /hostels/1
   def update
     if @hostel.update(hostel_params)
-      redirect_to @hostel, notice: 'Hostel was successfully updated.'
+      redirect_to user_panel_path, notice: 'Hostel was successfully updated.'
     else
       render :edit
     end
   end
 
+
   # DELETE /hostels/1
   def destroy
+    byebug
     @hostel.destroy
-    redirect_to hostels_url, notice: 'Hostel was successfully destroyed.'
+    redirect_to user_panel_path, notice: 'Hostel was successfully destroyed.'
   end
 
   private

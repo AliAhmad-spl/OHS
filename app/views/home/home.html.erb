@@ -1,12 +1,12 @@
-<div class="container-fluid">
+<div class="container">
 	<div class="row">
-		<div class="col-sm-2 " >
+		<div class="col-sm-2 position-fixed" style="margin: 50px; " >
 		<aside >
 			<center><p><b>Filters</b></p></center>
 			
 			<%= simple_form_for :search, url: landing_page_path, method: "GET" do |f| %>
 
- 			<%= f.input :prices, label: "Prices",  collection: $prices, as: :check_boxes %>
+ 			<%= f.input :prices, label: "< Less than prices",  collection: $prices, as: :check_boxes %>
   			<%= f.input :locations, label: "Locations", collection: $locations, as: :check_boxes %>	
   			<%= f.input :facilites, label: "facilites", collection: $facilities, as: :check_boxes %>
 
@@ -22,11 +22,11 @@
 			
 	
 	<% @hostels.each do |hostel| %>
-		<div class="card col-sm-8 col-sm-offset-4" style="margin: 50px auto 0;">
+		<div class="card col-sm-7 col-sm-offset-4" style="margin: 50px auto 0;">
 		  <img class="card-img-top" src="/landing.jpg" alt="Card image cap">
 		  <div class="card-body">
 		    <h5 class="card-title"><%= hostel.name %></h5>
-		    <p class="card-text"><%= hostel.address%></p>
+		   <!--  <p class="card-text"><%= hostel.address%></p> -->
 		    <p class="card-text"><small class="text-muted">Last updated 
 		    	<%= time_ago_in_words(hostel.updated_at)%> ago</small></p>
 		    <p class="card-text"><small class="text-muted">Contact: <%= hostel.phone%></small></p>
